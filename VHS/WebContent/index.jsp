@@ -24,12 +24,12 @@
 			</select>
 	</td></tr>
 	<tr><td>
-		<input type="radio" name="county" class="area"> County-wise </input>
-		
+	<select name="area">
+		<option selected="selected"> State </option>
+		<option>County </option>
+		<option>Congressional District</option>
 	</td>
-	<td><input type="radio" name="district" class="area"> Congressional District < /input>
-		
-	</td>
+	
 	</tr>
 	<tr><td>Attribute Name
 	<jsp:useBean id="column" class="vhs.ColumnBean" scope="page"/>	

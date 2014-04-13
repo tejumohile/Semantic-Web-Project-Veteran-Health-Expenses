@@ -1,90 +1,22 @@
 package vhs;
+import java.util.*;
 public class Data1150 {
-	public String state = null;
-	public String county = null;
-	public int fips = 0;
-	public double vPopulation = 0;;
-	public double totalExpenses = 0;
-	public double compensation = 0; 
-	public double construction = 0; 
-	public double educationVocationalRehabilitation =0;
-	public double loanGuaranty = 0;
-	public double generalOperatingExpenses = 0;
-	public double insuranceIndemnities = 0;
-	public double medicalCare = 0;
+	HashMap<String, String> attributes = new HashMap<>();
 	
-	public String getState() {
-		return state;
-	}
-	public void setState(String state) {
-		this.state = state;
-	}
-	public String getCounty() {
-		return county;
-	}
-	public void setCounty(String county) {
-		this.county = county;
-	}
-	public int getFips() {
-		return fips;
-	}
-	public void setFips(int fips) {
-		this.fips = fips;
-	}
-	public double getvPopulation() {
-		return vPopulation;
-	}
-	public void setvPopulation(double vPopulation) {
-		this.vPopulation = vPopulation;
-	}
-	public double getTotalExpenses() {
-		return totalExpenses;
-	}
-	public void setTotalExpenses(double totalExpenses) {
-		this.totalExpenses = totalExpenses;
-	}
-	public double getCompensation() {
-		return compensation;
-	}
-	public void setCompensation(double compensation) {
-		this.compensation = compensation;
-	}
-	public double getConstruction() {
-		return construction;
-	}
-	public void setConstruction(double construction) {
-		this.construction = construction;
-	}
-	public double getEducationVocationalRehabilitation() {
-		return educationVocationalRehabilitation;
-	}
-	public void setEducationVocationalRehabilitation(
-			double educationVocationalRehabilitation) {
-		this.educationVocationalRehabilitation = educationVocationalRehabilitation;
-	}
-	public double getLoanGuaranty() {
-		return loanGuaranty;
-	}
-	public void setLoanGuaranty(double loanGuaranty) {
-		this.loanGuaranty = loanGuaranty;
-	}
-	public double getGeneralOperatingExpenses() {
-		return generalOperatingExpenses;
-	}
-	public void setGeneralOperatingExpenses(double generalOperatingExpenses) {
-		this.generalOperatingExpenses = generalOperatingExpenses;
-	}
-	public double getInsuranceIndemnities() {
-		return insuranceIndemnities;
-	}
-	public void setInsuranceIndemnities(double insuranceIndemnities) {
-		this.insuranceIndemnities = insuranceIndemnities;
-	}
-	public double getMedicalCare() {
-		return medicalCare;
-	}
-	public void setMedicalCare(double medicalCare) {
-		this.medicalCare = medicalCare;
+	public Data1150(){
+		attributes.put("Fips", "<http://logd.tw.rpi.edu/source/data-gov/dataset/1150/vocab/raw/fips>");
+		attributes.put("Total Expenditure", "<http://logd.tw.rpi.edu/source/data-gov/dataset/1150/vocab/raw/total_expenditure>");
+		attributes.put("Name", "<http://logd.tw.rpi.edu/source/data-gov/dataset/1150/vocab/raw/name>");
+		attributes.put("Loan Guaranty", "<http://logd.tw.rpi.edu/source/data-gov/dataset/1150/vocab/raw/loan_guaranty>");
+		attributes.put("Medical Care", "<http://logd.tw.rpi.edu/source/data-gov/dataset/1150/vocab/raw/medical_care>");
+		attributes.put("Construction", "<http://logd.tw.rpi.edu/source/data-gov/dataset/1150/vocab/raw/construction>");
+		attributes.put("Education & Vocational Rehabilitation/Employment", "<http://logd.tw.rpi.edu/source/data-gov/dataset/1150/vocab/raw/education_vocational_rehabilitation_employment>");
+		attributes.put("Compensation & Pension", "<http://logd.tw.rpi.edu/source/data-gov/dataset/1150/vocab/raw/compensation_pension>");
+		attributes.put("General Operating Expenses", "<http://logd.tw.rpi.edu/source/data-gov/dataset/1150/vocab/raw/general_operating_expenses>");
+		attributes.put("Veteran Population", "<http://logd.tw.rpi.edu/source/data-gov/dataset/1150/vocab/raw/veteran_population>");
+		attributes.put("Insurance & Indemnities", "<http://logd.tw.rpi.edu/source/data-gov/dataset/1150/vocab/raw/insurance_indemnities>");
+		attributes.put("State", "<http://logd.tw.rpi.edu/source/data-gov/dataset/1150/vocab/raw/state>");
+		attributes.put("County", "<http://logd.tw.rpi.edu/source/data-gov/dataset/1150/vocab/raw/county>");
 	}
 
 
