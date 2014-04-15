@@ -25,8 +25,7 @@
 	</td></tr>
 	<tr><td>
 	<select name="area">
-		<option selected="selected"> State </option>
-		<option>County </option>
+		<option selected="selected">County </option>
 		<option>Congressional District</option>
 	</td>
 	
