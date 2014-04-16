@@ -109,11 +109,13 @@ public class FormHandlerServlet extends javax.servlet.http.HttpServlet {
 							+ " ?BlankNode " + dataTypes.attributes.get("Name") + " ?DistrictName . "
 							+ " OPTIONAL { ?BlankNode " + dataTypes.attributes.get(req.getParameter("column")) + "  ?M } . "											
 							+ " } ";
+					
 					result = ResultSetAdapter.sum( (ResultSet) sqm.issueSPARQLQuery(query, sqm
 							.createModel(path + dataset,
 									SparqlQueryMachine.dataset1151NameSpace)) );
 				}
 			}
+			System.out.println(query);
 			// Printing the resultset
 			Object [] places = result.keySet().toArray();
 			for (int i =  0 ; i < places.length; i++) {
@@ -127,7 +129,7 @@ public class FormHandlerServlet extends javax.servlet.http.HttpServlet {
 				}				
 			}
 			webPage +="     ]);"; // End of JSON Object			
-			
+			int height = 0;			
 			// Drawing the Graph from the result HashMap
 			if (req.getParameter("graph").equals("Map") 
 					&& req.getParameter("state").equals("All States")) {
@@ -135,7 +137,9 @@ public class FormHandlerServlet extends javax.servlet.http.HttpServlet {
 				webPage +="var options = { width: 1500, height: 2000, region:'US', resolution:'provinces'};";
 				webPage +="var chart = "
 						+ "new google.visualization.GeoChart("
-						+ "document.getElementById('chart_div'));";				
+						+ "document.getElementById('chart_div'));";	
+				height = 2000;
+				
 			} else if (req.getParameter("graph").equals("Bar chart")) {
 				webPage +="var options = { "
 						+ "title: '"+ GraphTitle +"', "
@@ -143,13 +147,13 @@ public class FormHandlerServlet extends javax.servlet.http.HttpServlet {
 						+ " }; ";
 				webPage +=" var chart ="
 				        + " new google.visualization.BarChart(document.getElementById('chart_div'));";
+				height = 25 * result.size();
 				
 			}
 			webPage +="chart.draw(data, options);	} ";
 			webPage +="</script> </head> <body> "+
-				"	<div id='chart_div' style='width: 1500px; height: 2000px;'></div> " +
+				"	<div id='chart_div' style='width: 1500px; height: "+height+"px;'></div> " +
 				"  </body></html>";
-			System.out.println(webPage);
 			out.println(webPage);
 		} catch (Exception e) {
 			e.printStackTrace();
